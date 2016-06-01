@@ -15,6 +15,18 @@
       "type": "string",
       "message": "Author"
     },
+    "router": {
+      "type": "confirm",
+      "message": "Use VueRouter as the app router?"
+    },
+    "vuex": {
+      "type": "confirm",
+      "message": "Use Vuex to store your app?"
+    },
+    "validator": {
+      "type": "confirm",
+      "message": "Use VueValidator to validate you app?"
+    },
     "lint": {
       "type": "confirm",
       "message": "Use ESLint to lint your code?"
@@ -52,6 +64,8 @@
   },
   "filters": {
     ".eslintrc.js": "lint",
+    "src/app/ValidatorExample.vue": "validator",
+    "src/vuex/**/*": "vuex",
     "test/unit/**/*": "unit",
     "test/e2e/**/*": "e2e"
   },
