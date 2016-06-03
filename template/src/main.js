@@ -20,8 +20,23 @@ Vue.use(VueValidator){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 Vue.use(Vuex){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/vuex}}
 
+{{#vuex}}
+import store from './vuex/store'
+{{#vuex}}
+
+{{#router}}
+import router from './router'
+{{/router}}
+
+{{#if router}}
+// Create a root component
+let App = Vue.extend({}){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+// Start the app
+router.start(App, 'body'){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+{{else}}
 /* eslint-disable no-new */
 new Vue({
   el: 'body',
   components: { App }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
 }){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+{{/if}}
