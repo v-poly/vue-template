@@ -5,7 +5,12 @@
     <title>{{ name }}</title>
   </head>
   <body>
+    {{#if router}}
+    <div id="app"></div>
+    </div>
+    {{else}}
     <app></app>
+    {{/if}}
     <!-- built files will be auto injected -->
   </body>
 </html>

@@ -1,9 +1,12 @@
 /**
  * @file App single store
  */
-import Vuex from 'vuex'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import cart from './modules/cart'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import products from './modules/products'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import Vue from 'vue'
+import Vuex from 'vuex'
+Vue.use(Vuex)
+
+import cart from './modules/cart'
+import products from './modules/products'
 
 export default new Vuex.Store({
   // combine sub modules
@@ -11,4 +14,4 @@ export default new Vuex.Store({
     cart,
     products
   }
-}){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+})

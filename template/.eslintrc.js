@@ -4,9 +4,6 @@ module.exports = {
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
   extends: 'standard',
   {{/if_eq}}
-  {{#if_eq lintConfig "airbnb"}}
-  extends: 'airbnb-base',
-  {{/if_eq}}
   // required to lint *.vue files
   plugins: [
     'html'

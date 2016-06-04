@@ -1,3 +1,35 @@
+{{#if router}}
+<template>
+  <div>
+    <a v-link="'/foo'">Go to foo</a>
+    <a v-link="'/bar'">Go to bar</a>
+    {{#validator}}
+    <a v-link="'/validate'">Go to validate example</a>
+    {{/validator}}
+    <router-view transition="fade" transition-mode="out-in"></router-view>
+  </div>
+</template>
+<script>
+{{#vuex}}
+import store from './vuex/store'
+{{/vuex}}
+export default {
+  ready () {
+    console.log('ready.')
+  }{{#vuex}},
+  store: store
+  {{/vuex}}
+}
+</script>
+<style>
+.fade-transition {
+  transition: all .3s ease;
+}
+.fade-enter, .fade-leave {
+  opacity: 0;
+}
+</style>
+{{else}}
 <template>
   <div id="app">
     <img class="logo" src="./assets/logo.png">
@@ -23,13 +55,19 @@
 </template>
 
 <script>
-import Hello from './components/Hello'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+{{#vuex}}
+import store from './vuex/store'
+{{/vuex}}
+import Hello from './components/Hello'
 
 export default {
   components: {
-    Hello{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+    Hello
+  },
+  {{#vuex}}
+  store: store
+  {{/vuex}}
+}
 </script>
 
 <style>
@@ -62,3 +100,4 @@ body {
   height: 100px
 }
 </style>
+{{/if}}

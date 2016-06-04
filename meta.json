@@ -42,11 +42,6 @@
           "short": "Standard"
         },
         {
-          "name": "AirBNB (https://github.com/airbnb/javascript)",
-          "value": "airbnb",
-          "short": "AirBNB"
-        },
-        {
           "name": "none (configure it yourself)",
           "value": "none",
           "short": "none"
@@ -65,6 +60,7 @@
   "filters": {
     ".eslintrc.js": "lint",
     "src/app/ValidatorExample.vue": "validator",
+    "src/app/{Foo,Bar}.vue": "router",
     "src/vuex/**/*": "vuex",
     "test/unit/**/*": "unit",
     "test/e2e/**/*": "e2e"
