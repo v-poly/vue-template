@@ -61,6 +61,7 @@
     ".eslintrc.js": "lint",
     "src/app/ValidatorExample.vue": "validator",
     "src/app/{Foo,Bar}.vue": "router",
+    "src/router.js": "router",
     "src/vuex/**/*": "vuex",
     "test/unit/**/*": "unit",
     "test/e2e/**/*": "e2e"
